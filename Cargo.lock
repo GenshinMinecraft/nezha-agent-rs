@@ -520,9 +520,9 @@ checksum = "2304e00983f87ffb38b55b444b5e3b60a884b5d30c0fca7d82fe33449bbe55ea"
 
 [[package]]
 name = "heim-common"
-version = "0.0.11"
+version = "0.0.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6f5a8c66797cb950fdbf6ea1d750f5ffe687e4cb13713fe1f3214d693ffd72a4"
+checksum = "144af2a423102dd4dd3e9fdd2c77c4756fb3c6c009d691628997fd5a2247719a"
 dependencies = [
  "cfg-if 0.1.10",
  "core-foundation",
@@ -539,9 +539,9 @@ dependencies = [
 
 [[package]]
 name = "heim-runtime"
-version = "0.0.7"
+version = "0.0.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1504955d04ec7cf8df8bbe541a8636f619450af6f618a6a6111dfecc79743ee5"
+checksum = "00bd0a5a5e4af50d5d7d9537d3ecf02dca42c26bbbd8dd76621c5116dab14f69"
 dependencies = [
  "cfg-if 0.1.10",
  "futures-channel",
@@ -552,9 +552,9 @@ dependencies = [
 
 [[package]]
 name = "heim-virt"
-version = "0.0.11"
+version = "0.0.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "79e1d9cb9d87a4f8bc8721ae86c00eb2a232853bca969e63ff8f62660493c477"
+checksum = "e4b6ac6721ba5856659a197934ce522250a3ddd2e8646daa5660b41f1ba96457"
 dependencies = [
  "cfg-if 0.1.10",
  "heim-common",
@@ -915,9 +915,9 @@ dependencies = [
 
 [[package]]
 name = "num-rational"
-version = "0.3.2"
+version = "0.2.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "12ac428b1cb17fce6f731001d307d351ec70a6d202fc2e60f7d4c5e42d8f4f07"
+checksum = "5c000134b5dbf44adc5cb772486d335293351644b801551abe8f75c84cfa4aef"
 dependencies = [
  "autocfg",
  "num-integer",
@@ -1910,9 +1910,9 @@ checksum = "8ecb6da28b8a351d773b68d5825ac39017e680750f980f3a1a85cd8dd28a47c1"
 
 [[package]]
 name = "uom"
-version = "0.30.0"
+version = "0.27.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e76503e636584f1e10b9b3b9498538279561adcef5412927ba00c2b32c4ce5ed"
+checksum = "51fc04fb44bcb7806da71885872cb15d123b681e459a476ef8a0bab287bee0cd"
 dependencies = [
  "num-rational",
  "num-traits",

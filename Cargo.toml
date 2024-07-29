@@ -12,7 +12,7 @@ tokio-stream = "0.1.15"
 prost = "0.13.1"
 whoami = "1.5.1"
 sysinfo = "0.30.13"
-heim-virt = "0.0.11"
+heim-virt = "0.0.10"
 systemstat = "0.2.3"
 reqwest = { version = "0.12.5", features = ["rustls-tls"], default-features = false }
 cpuinfo = "0.1.1"
