@@ -1,0 +1,81 @@
+# 定义一个名为Rust Release的GitHub Actions工作流，用于发布Rust程序
+name: Linux Build
+
+# 工作流在push到main分支时触发
+on:
+  push:
+    branches:
+      - "main"
+
+jobs:
+  release:
+    name: Release - ${{ matrix.platform.release_for }}
+    strategy:
+      matrix:
+        platform:
+          - release_for: linux_x86_64
+            os: ubuntu-latest
+            target: x86_64-unknown-linux-musl
+            bin: nezha-agent-rs
+            name: nezha-agent-rs-linux-x86_64.tar.gz
+            command: build
+          - release_for: linux_aarch64
+            os: ubuntu-latest
+            target: aarch64-unknown-linux-musl
+            bin: nezha-agent-rs
+            name: nezha-agent-rs-linux-aarch64.tar.gz
+            command: build
+          - release_for: linux_armeabi
+            os: ubuntu-latest
+            target: arm-unknown-linux-musleabi
+            bin: nezha-agent-rs
+            name: nezha-agent-rs-linux-armeabi.tar.gz
+            command: build
+          - release_for: linux_armeabihf
+            os: ubuntu-latest
+            target: arm-unknown-linux-musleabihf
+            bin: nezha-agent-rs
+            name: nezha-agent-rs-linux-armeabihf.tar.gz
+            command: build
+          - release_for: linux_armv7eabi
+            os: ubuntu-latest
+            target: armv7-unknown-linux-musleabi
+            bin: nezha-agent-rs
+            name: nezha-agent-rs-linux-armv7eabi.tar.gz
+            command: build
+          - release_for: linux_armv7eabihf
+            os: ubuntu-latest
+            target: armv7-unknown-linux-musleabihf
+            bin: nezha-agent-rs
+            name: nezha-agent-rs-linux-armv7eabihf.tar.gz
+            command: build
+          - release_for: linux_i586
+            os: ubuntu-latest
+            target: i686-unknown-linux-musl
+            bin: nezha-agent-rs
+            name: nezha-agent-rs-linux-i686.tar.gz
+            command: build
+          - release_for: linux_i686
+            os: ubuntu-latest
+            target: i686-unknown-linux-musl
+            bin: nezha-agent-rs
+            name: nezha-agent-rs-linux-i686.tar.gz
+            command: build
+    runs-on: ${{ matrix.platform.os }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install Lib
+        run: sudo apt update && sudo apt install -y protobuf-compiler musl-tools musl-dev musl
+      - name: Build binary
+        uses: houseabsolute/actions-rust-cross@v0
+        with:
+          command: ${{ matrix.platform.command }}
+          target: ${{ matrix.platform.target }}
+          args: "--locked --release"
+          strip: true
+      - name: Upload binary
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ matrix.platform.target }}
+          path: target/${{ matrix.platform.target }}/release/${{ matrix.platform.bin }}  

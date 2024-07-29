@@ -1,0 +1,31 @@
+name: Windows Build
+
+on:
+  push:
+    branches:
+      - "main"
+
+jobs:
+  release:
+    name: Release - Windows
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install Protoc
+        uses: arduino/setup-protoc@v3
+      - name: Set up nasm
+        uses: ilammy/setup-nasm@v1
+      - name: Set up Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          profile: minimal
+          override: true
+      - name: Build
+        run: cargo build --release
+      - name: Upload binary
+        uses: actions/upload-artifact@v3
+        with:
+          name: x86_64-pc-windows-msvc
+          path: target/release/nezha-agent-rs.exe

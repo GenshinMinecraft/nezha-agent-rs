@@ -1,6 +1,6 @@
 use clap::Parser;
 
-/// Cloudflare IP Speedtest Backend
+/// Nezha Agent
 #[derive(Parser, Debug, Clone)]
 #[command(version, about, long_about = None)]
 pub struct Args {
