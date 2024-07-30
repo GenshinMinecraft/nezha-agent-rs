@@ -18,8 +18,8 @@ reqwest = { version = "0.12.5", features = ["rustls-tls"], default-features = fa
 cpuinfo = "0.1.1"
 clap = { version = "4.5.8", features = ["derive"] }
 
-[build-dependencies]
-tonic-build = "0.12.1"
+# [build-dependencies]
+# tonic-build = "0.12.1"
 
 [profile.release]
 codegen-units = 1
