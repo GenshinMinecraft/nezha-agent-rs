@@ -72,7 +72,7 @@ jobs:
             command: build
           - release_for: linux_armeabi_gnu
             os: ubuntu-latest
-            target: arm-unknown-linux-gnu
+            target: arm-unknown-linux-gnueabi
             bin: nezha-agent-rs
             name: nezha-agent-rs-linux-armeabi.tar.gz
             command: build
