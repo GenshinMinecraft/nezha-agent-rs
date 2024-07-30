@@ -1,4 +1,94 @@
+[target.aarch64-apple-darwin]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.aarch64-apple-ios]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.aarch64-apple-ios-sim]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.aarch64-linux-android]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.aarch64-pc-windows-gnullvm]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.aarch64-pc-windows-msvc]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.aarch64-unknown-fuchsia]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.aarch64-unknown-linux-gnu]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
 [target.aarch64-unknown-linux-musl]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.aarch64-unknown-linux-ohos]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.aarch64-unknown-none]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.aarch64-unknown-none-softfloat]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.aarch64-unknown-uefi]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.arm-linux-androideabi]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.arm-unknown-linux-gnueabi]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.arm-unknown-linux-gnueabihf]
 pre-build = [
     "apt-get update",
     "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
@@ -16,7 +106,43 @@ pre-build = [
     "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
 ]
 
+[target.armebv7r-none-eabi]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.armebv7r-none-eabihf]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.armv5te-unknown-linux-gnueabi]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
 [target.armv5te-unknown-linux-musleabi]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.armv7-linux-androideabi]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.armv7-unknown-linux-gnueabi]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.armv7-unknown-linux-gnueabihf]
 pre-build = [
     "apt-get update",
     "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
@@ -34,7 +160,79 @@ pre-build = [
     "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
 ]
 
+[target.armv7-unknown-linux-ohos]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.armv7a-none-eabi]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.armv7r-none-eabi]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.armv7r-none-eabihf]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.i586-pc-windows-msvc]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.i586-unknown-linux-gnu]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
 [target.i586-unknown-linux-musl]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.i686-linux-android]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.i686-pc-windows-gnu]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.i686-pc-windows-gnullvm]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.i686-pc-windows-msvc]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.i686-unknown-freebsd]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.i686-unknown-linux-gnu]
 pre-build = [
     "apt-get update",
     "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
@@ -46,8 +244,315 @@ pre-build = [
     "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
 ]
 
+[target.i686-unknown-uefi]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.loongarch64-unknown-linux-gnu]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.loongarch64-unknown-none]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.loongarch64-unknown-none-softfloat]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.nvptx64-nvidia-cuda]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.powerpc-unknown-linux-gnu]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.powerpc64-unknown-linux-gnu]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.powerpc64le-unknown-linux-gnu]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.riscv32i-unknown-none-elf]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.riscv32im-unknown-none-elf]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.riscv32imac-unknown-none-elf]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.riscv32imafc-unknown-none-elf]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.riscv32imc-unknown-none-elf]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.riscv64gc-unknown-linux-gnu]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.riscv64gc-unknown-none-elf]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.riscv64imac-unknown-none-elf]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.s390x-unknown-linux-gnu]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.sparc64-unknown-linux-gnu]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.sparcv9-sun-solaris]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.thumbv6m-none-eabi]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.thumbv7em-none-eabi]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.thumbv7em-none-eabihf]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.thumbv7m-none-eabi]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.thumbv7neon-linux-androideabi]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.thumbv7neon-unknown-linux-gnueabihf]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.thumbv8m.base-none-eabi]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.thumbv8m.main-none-eabi]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.thumbv8m.main-none-eabihf]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.wasm32-unknown-emscripten]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.wasm32-unknown-unknown]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.wasm32-wasi]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.wasm32-wasip1]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.wasm32-wasip1-threads]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.x86_64-apple-darwin]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.x86_64-apple-ios]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.x86_64-fortanix-unknown-sgx]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.x86_64-linux-android]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.x86_64-pc-solaris]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.x86_64-pc-windows-gnu]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.x86_64-pc-windows-gnullvm]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.x86_64-pc-windows-msvc]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.x86_64-unknown-freebsd]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.x86_64-unknown-fuchsia]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.x86_64-unknown-illumos]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.x86_64-unknown-linux-gnu]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.x86_64-unknown-linux-gnux32]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
 [target.x86_64-unknown-linux-musl]
 pre-build = [
     "apt-get update",
     "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
 ]
+
+[target.x86_64-unknown-linux-ohos]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.x86_64-unknown-netbsd]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.x86_64-unknown-none]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.x86_64-unknown-redox]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+
+[target.x86_64-unknown-uefi]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes musl musl-dev musl-tools protobuf-compiler"
+]
+

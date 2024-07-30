@@ -13,53 +13,158 @@ jobs:
     strategy:
       matrix:
         platform:
-          - release_for: linux_x86_64
+          - release_for: linux_x86_64_musl
             os: ubuntu-latest
             target: x86_64-unknown-linux-musl
             bin: nezha-agent-rs
             name: nezha-agent-rs-linux-x86_64.tar.gz
             command: build
-          - release_for: linux_aarch64
+          - release_for: linux_aarch64_musl
             os: ubuntu-latest
             target: aarch64-unknown-linux-musl
             bin: nezha-agent-rs
             name: nezha-agent-rs-linux-aarch64.tar.gz
             command: build
-          - release_for: linux_armeabi
+          - release_for: linux_armeabi_musl
             os: ubuntu-latest
             target: arm-unknown-linux-musleabi
             bin: nezha-agent-rs
             name: nezha-agent-rs-linux-armeabi.tar.gz
             command: build
-          - release_for: linux_armeabihf
+          - release_for: linux_armeabihf_musl
             os: ubuntu-latest
             target: arm-unknown-linux-musleabihf
             bin: nezha-agent-rs
             name: nezha-agent-rs-linux-armeabihf.tar.gz
             command: build
-          - release_for: linux_armv7eabi
+          - release_for: linux_armv5teeabi_musl
+            os: ubuntu-latest
+            target: armv5te-unknown-linux-musleabi
+          - release_for: linux_armv7eabi_musl
             os: ubuntu-latest
             target: armv7-unknown-linux-musleabi
             bin: nezha-agent-rs
             name: nezha-agent-rs-linux-armv7eabi.tar.gz
             command: build
-          - release_for: linux_armv7eabihf
+          - release_for: linux_armv7eabihf_musl
             os: ubuntu-latest
             target: armv7-unknown-linux-musleabihf
             bin: nezha-agent-rs
             name: nezha-agent-rs-linux-armv7eabihf.tar.gz
             command: build
-          - release_for: linux_i586
+          - release_for: linux_i586_musl
             os: ubuntu-latest
             target: i686-unknown-linux-musl
             bin: nezha-agent-rs
             name: nezha-agent-rs-linux-i686.tar.gz
             command: build
-          - release_for: linux_i686
+          - release_for: linux_i686_musl
             os: ubuntu-latest
             target: i686-unknown-linux-musl
             bin: nezha-agent-rs
             name: nezha-agent-rs-linux-i686.tar.gz
+            command: build
+          - release_for: linux_aarch64_gnu
+            os: ubuntu-latest
+            target: aarch64-unknown-linux-gnu
+            bin: nezha-agent-rs
+            name: nezha-agent-rs-linux-aarch64.tar.gz
+            command: build
+          - release_for: linux_armeabi_gnu
+            os: ubuntu-latest
+            target: arm-unknown-linux-gnu
+            bin: nezha-agent-rs
+            name: nezha-agent-rs-linux-armeabi.tar.gz
+            command: build
+          - release_for: linux_armeabihf_gnu
+            os: ubuntu-latest
+            target: arm-unknown-linux-gnueabihf
+            bin: nezha-agent-rs
+            name: nezha-agent-rs-linux-armeabihf.tar.gz
+            command: build
+          - release_for: linux_armv5teeabi_gnu
+            os: ubuntu-latest
+            target: armv5te-unknown-linux-gnueabi
+            bin: nezha-agent-rs
+            name: nezha-agent-rs-linux-armv5teeabi.tar.gz
+            command: build
+          - release_for: linux_armv7eabi_gnu
+            os: ubuntu-latest
+            target: armv7-unknown-linux-gnueabi
+            bin: nezha-agent-rs
+            name: nezha-agent-rs-linux-armv7eabi.tar.gz
+            command: build
+          - release_for: linux_armv7eabihf_gnu
+            os: ubuntu-latest
+            target: armv7-unknown-linux-gnueabihf
+            bin: nezha-agent-rs
+            name: nezha-agent-rs-linux-armv7eabihf.tar.gz
+            command: build
+          - release_for: linux_i586_gnu
+            os: ubuntu-latest
+            target: i586-unknown-linux-gnu
+            bin: nezha-agent-rs
+            name: nezha-agent-rs-linux-i586.tar.gz
+            command: build
+          - release_for: linux_i686_gnu
+            os: ubuntu-latest
+            target: i686-unknown-linux-gnu
+            bin: nezha-agent-rs
+            name: nezha-agent-rs-linux-i686.tar.gz
+            command: build
+          - release_for: linux_loongarch64_gnu
+            os: ubuntu-latest
+            target: loongarch64-unknown-linux-gnu
+            bin: nezha-agent-rs
+            name: nezha-agent-rs-linux-loongarch64.tar.gz
+            command: build
+          - release_for: linux_powerpc_gnu
+            os: ubuntu-latest
+            target: powerpc-unknown-linux-gnu
+            bin: nezha-agent-rs
+            name: nezha-agent-rs-linux-powerpc.tar.gz
+            command: build
+          - release_for: linux_powerpc64_gnu
+            os: ubuntu-latest
+            target: powerpc64-unknown-linux-gnu
+            bin: nezha-agent-rs
+            name: nezha-agent-rs-linux-powerpc64.tar.gz
+            command: build
+          - release_for: linux_powerpc64le_gnu
+            os: ubuntu-latest
+            target: powerpc64le-unknown-linux-gnu
+            bin: nezha-agent-rs
+            name: nezha-agent-rs-linux-powerpc64le.tar.gz
+            command: build
+          - release_for: linux_riscv64_gnu
+            os: ubuntu-latest
+            target: riscv64gc-unknown-linux-gnu
+            bin: nezha-agent-rs
+            name: nezha-agent-rs-linux-riscv64.tar.gz
+            command: build
+          - release_for: linux_s390x_gnu
+            os: ubuntu-latest
+            target: s390x-unknown-linux-gnu
+            bin: nezha-agent-rs
+            name: nezha-agent-rs-linux-s390x.tar.gz
+            command: build
+          - release_for: linux_sparc64_gnu
+            os: ubuntu-latest
+            target: sparc64-unknown-linux-gnu
+            bin: nezha-agent-rs
+            name: nezha-agent-rs-linux-sparc64.tar.gz
+            command: build
+          - release_for: linux_thumbv7neon_gnu
+            os: ubuntu-latest
+            target: thumbv7neon-unknown-linux-gnueabihf
+            bin: nezha-agent-rs
+            name: nezha-agent-rs-linux-armv7.tar.gz
+            command: build
+          - release_for: linux_x86_64_gnux32
+            os: ubuntu-latest
+            target: x86_64-unknown-linux-gnux32
+            bin: nezha-agent-rs
+            name: nezha-agent-rs-linux-x86_64_gnux32.tar.gz
             command: build
     runs-on: ${{ matrix.platform.os }}
     steps:
