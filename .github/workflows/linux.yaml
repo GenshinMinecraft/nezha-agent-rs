@@ -112,12 +112,6 @@ jobs:
             bin: nezha-agent-rs
             name: nezha-agent-rs-linux-i686.tar.gz
             command: build
-          - release_for: linux_loongarch64_gnu
-            os: ubuntu-latest
-            target: loongarch64-unknown-linux-gnu
-            bin: nezha-agent-rs
-            name: nezha-agent-rs-linux-loongarch64.tar.gz
-            command: build
           - release_for: linux_powerpc_gnu
             os: ubuntu-latest
             target: powerpc-unknown-linux-gnu
