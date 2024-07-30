@@ -100,12 +100,6 @@ jobs:
             bin: nezha-agent-rs
             name: nezha-agent-rs-linux-armv7eabihf.tar.gz
             command: build
-          - release_for: linux_i586_gnu
-            os: ubuntu-latest
-            target: i586-unknown-linux-gnu
-            bin: nezha-agent-rs
-            name: nezha-agent-rs-linux-i586.tar.gz
-            command: build
           - release_for: linux_i686_gnu
             os: ubuntu-latest
             target: i686-unknown-linux-gnu
