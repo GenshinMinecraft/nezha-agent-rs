@@ -136,12 +136,6 @@ jobs:
             bin: nezha-agent-rs
             name: nezha-agent-rs-linux-s390x.tar.gz
             command: build
-          - release_for: linux_thumbv7neon_gnu
-            os: ubuntu-latest
-            target: thumbv7neon-unknown-linux-gnueabihf
-            bin: nezha-agent-rs
-            name: nezha-agent-rs-linux-armv7.tar.gz
-            command: build
     runs-on: ${{ matrix.platform.os }}
     steps:
       - name: Checkout
