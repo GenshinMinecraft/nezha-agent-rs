@@ -8,7 +8,7 @@
 
 使用方法与官方 Nezha Agent 无异，请使用 `--help` 查看帮助信息:
 ```
-Nezha Agent
+Nezha Rust Agent
 
 Usage: nezha-agent-rs [OPTIONS] --server <SERVER> --password <PASSWORD>
 
@@ -16,11 +16,14 @@ Options:
   -s, --server <SERVER>      Frontend Server Address
   -p, --password <PASSWORD>  Token Setting
       --debug                Enable Debug Log
+      --tls                  Enable Tls Connect
   -h, --help                 Print help
   -V, --version              Print version
 ```
 
 基础使用仅需 `./nezha-agent-rs -s [服务器地址:端口] -p [连接密钥]`
+
+当你需要启用 TLS 连接，请使用 `--tls` 参数，默认为使用本地证书和由 `webpki-roots` 提供的证书，暂不支持跳过证书验证
 
 请前往本项目 Action 获取 Release 构建文件，不会存放至 Release 页面，请自行下载
 

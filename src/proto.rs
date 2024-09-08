@@ -114,8 +114,8 @@ pub struct IoStreamData {
 /// Generated client implementations.
 pub mod nezha_service_client {
     #![allow(unused_variables, dead_code, missing_docs, clippy::let_unit_value)]
-    use tonic::codegen::*;
     use tonic::codegen::http::Uri;
+    use tonic::codegen::*;
     #[derive(Debug, Clone)]
     pub struct NezhaServiceClient<T> {
         inner: tonic::client::Grpc<T>,
@@ -159,9 +159,8 @@ pub mod nezha_service_client {
                     <T as tonic::client::GrpcService<tonic::body::BoxBody>>::ResponseBody,
                 >,
             >,
-            <T as tonic::codegen::Service<
-                http::Request<tonic::body::BoxBody>,
-            >>::Error: Into<StdError> + Send + Sync,
+            <T as tonic::codegen::Service<http::Request<tonic::body::BoxBody>>>::Error:
+                Into<StdError> + Send + Sync,
         {
             NezhaServiceClient::new(InterceptedService::new(inner, interceptor))
         }
@@ -200,19 +199,15 @@ pub mod nezha_service_client {
             &mut self,
             request: impl tonic::IntoRequest<super::State>,
         ) -> std::result::Result<tonic::Response<super::Receipt>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::new(
+                    tonic::Code::Unknown,
+                    format!("Service was not ready: {}", e.into()),
+                )
+            })?;
             let codec = tonic::codec::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/proto.NezhaService/ReportSystemState",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/proto.NezhaService/ReportSystemState");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("proto.NezhaService", "ReportSystemState"));
@@ -222,19 +217,14 @@ pub mod nezha_service_client {
             &mut self,
             request: impl tonic::IntoRequest<super::Host>,
         ) -> std::result::Result<tonic::Response<super::Receipt>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::new(
+                    tonic::Code::Unknown,
+                    format!("Service was not ready: {}", e.into()),
+                )
+            })?;
             let codec = tonic::codec::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/proto.NezhaService/ReportSystemInfo",
-            );
+            let path = http::uri::PathAndQuery::from_static("/proto.NezhaService/ReportSystemInfo");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("proto.NezhaService", "ReportSystemInfo"));
@@ -244,19 +234,14 @@ pub mod nezha_service_client {
             &mut self,
             request: impl tonic::IntoRequest<super::TaskResult>,
         ) -> std::result::Result<tonic::Response<super::Receipt>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::new(
+                    tonic::Code::Unknown,
+                    format!("Service was not ready: {}", e.into()),
+                )
+            })?;
             let codec = tonic::codec::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/proto.NezhaService/ReportTask",
-            );
+            let path = http::uri::PathAndQuery::from_static("/proto.NezhaService/ReportTask");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("proto.NezhaService", "ReportTask"));
@@ -265,23 +250,16 @@ pub mod nezha_service_client {
         pub async fn request_task(
             &mut self,
             request: impl tonic::IntoRequest<super::Host>,
-        ) -> std::result::Result<
-            tonic::Response<tonic::codec::Streaming<super::Task>>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<tonic::codec::Streaming<super::Task>>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::new(
+                    tonic::Code::Unknown,
+                    format!("Service was not ready: {}", e.into()),
+                )
+            })?;
             let codec = tonic::codec::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/proto.NezhaService/RequestTask",
-            );
+            let path = http::uri::PathAndQuery::from_static("/proto.NezhaService/RequestTask");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("proto.NezhaService", "RequestTask"));
@@ -294,19 +272,14 @@ pub mod nezha_service_client {
             tonic::Response<tonic::codec::Streaming<super::IoStreamData>>,
             tonic::Status,
         > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::new(
+                    tonic::Code::Unknown,
+                    format!("Service was not ready: {}", e.into()),
+                )
+            })?;
             let codec = tonic::codec::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/proto.NezhaService/IOStream",
-            );
+            let path = http::uri::PathAndQuery::from_static("/proto.NezhaService/IOStream");
             let mut req = request.into_streaming_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("proto.NezhaService", "IOStream"));
@@ -336,21 +309,16 @@ pub mod nezha_service_server {
         /// Server streaming response type for the RequestTask method.
         type RequestTaskStream: tonic::codegen::tokio_stream::Stream<
                 Item = std::result::Result<super::Task, tonic::Status>,
-            >
-            + Send
+            > + Send
             + 'static;
         async fn request_task(
             &self,
             request: tonic::Request<super::Host>,
-        ) -> std::result::Result<
-            tonic::Response<Self::RequestTaskStream>,
-            tonic::Status,
-        >;
+        ) -> std::result::Result<tonic::Response<Self::RequestTaskStream>, tonic::Status>;
         /// Server streaming response type for the IOStream method.
         type IOStreamStream: tonic::codegen::tokio_stream::Stream<
                 Item = std::result::Result<super::IoStreamData, tonic::Status>,
-            >
-            + Send
+            > + Send
             + 'static;
         async fn io_stream(
             &self,
@@ -378,10 +346,7 @@ pub mod nezha_service_server {
                 max_encoding_message_size: None,
             }
         }
-        pub fn with_interceptor<F>(
-            inner: T,
-            interceptor: F,
-        ) -> InterceptedService<Self, F>
+        pub fn with_interceptor<F>(inner: T, interceptor: F) -> InterceptedService<Self, F>
         where
             F: tonic::service::Interceptor,
         {
@@ -436,21 +401,13 @@ pub mod nezha_service_server {
                 "/proto.NezhaService/ReportSystemState" => {
                     #[allow(non_camel_case_types)]
                     struct ReportSystemStateSvc<T: NezhaService>(pub Arc<T>);
-                    impl<T: NezhaService> tonic::server::UnaryService<super::State>
-                    for ReportSystemStateSvc<T> {
+                    impl<T: NezhaService> tonic::server::UnaryService<super::State> for ReportSystemStateSvc<T> {
                         type Response = super::Receipt;
-                        type Future = BoxFuture<
-                            tonic::Response<Self::Response>,
-                            tonic::Status,
-                        >;
-                        fn call(
-                            &mut self,
-                            request: tonic::Request<super::State>,
-                        ) -> Self::Future {
+                        type Future = BoxFuture<tonic::Response<Self::Response>, tonic::Status>;
+                        fn call(&mut self, request: tonic::Request<super::State>) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                <T as NezhaService>::report_system_state(&inner, request)
-                                    .await
+                                <T as NezhaService>::report_system_state(&inner, request).await
                             };
                             Box::pin(fut)
                         }
@@ -480,21 +437,13 @@ pub mod nezha_service_server {
                 "/proto.NezhaService/ReportSystemInfo" => {
                     #[allow(non_camel_case_types)]
                     struct ReportSystemInfoSvc<T: NezhaService>(pub Arc<T>);
-                    impl<T: NezhaService> tonic::server::UnaryService<super::Host>
-                    for ReportSystemInfoSvc<T> {
+                    impl<T: NezhaService> tonic::server::UnaryService<super::Host> for ReportSystemInfoSvc<T> {
                         type Response = super::Receipt;
-                        type Future = BoxFuture<
-                            tonic::Response<Self::Response>,
-                            tonic::Status,
-                        >;
-                        fn call(
-                            &mut self,
-                            request: tonic::Request<super::Host>,
-                        ) -> Self::Future {
+                        type Future = BoxFuture<tonic::Response<Self::Response>, tonic::Status>;
+                        fn call(&mut self, request: tonic::Request<super::Host>) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                <T as NezhaService>::report_system_info(&inner, request)
-                                    .await
+                                <T as NezhaService>::report_system_info(&inner, request).await
                             };
                             Box::pin(fut)
                         }
@@ -524,13 +473,9 @@ pub mod nezha_service_server {
                 "/proto.NezhaService/ReportTask" => {
                     #[allow(non_camel_case_types)]
                     struct ReportTaskSvc<T: NezhaService>(pub Arc<T>);
-                    impl<T: NezhaService> tonic::server::UnaryService<super::TaskResult>
-                    for ReportTaskSvc<T> {
+                    impl<T: NezhaService> tonic::server::UnaryService<super::TaskResult> for ReportTaskSvc<T> {
                         type Response = super::Receipt;
-                        type Future = BoxFuture<
-                            tonic::Response<Self::Response>,
-                            tonic::Status,
-                        >;
+                        type Future = BoxFuture<tonic::Response<Self::Response>, tonic::Status>;
                         fn call(
                             &mut self,
                             request: tonic::Request<super::TaskResult>,
@@ -567,20 +512,12 @@ pub mod nezha_service_server {
                 "/proto.NezhaService/RequestTask" => {
                     #[allow(non_camel_case_types)]
                     struct RequestTaskSvc<T: NezhaService>(pub Arc<T>);
-                    impl<
-                        T: NezhaService,
-                    > tonic::server::ServerStreamingService<super::Host>
-                    for RequestTaskSvc<T> {
+                    impl<T: NezhaService> tonic::server::ServerStreamingService<super::Host> for RequestTaskSvc<T> {
                         type Response = super::Task;
                         type ResponseStream = T::RequestTaskStream;
-                        type Future = BoxFuture<
-                            tonic::Response<Self::ResponseStream>,
-                            tonic::Status,
-                        >;
-                        fn call(
-                            &mut self,
-                            request: tonic::Request<super::Host>,
-                        ) -> Self::Future {
+                        type Future =
+                            BoxFuture<tonic::Response<Self::ResponseStream>, tonic::Status>;
+                        fn call(&mut self, request: tonic::Request<super::Host>) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 <T as NezhaService>::request_task(&inner, request).await
@@ -613,21 +550,14 @@ pub mod nezha_service_server {
                 "/proto.NezhaService/IOStream" => {
                     #[allow(non_camel_case_types)]
                     struct IOStreamSvc<T: NezhaService>(pub Arc<T>);
-                    impl<
-                        T: NezhaService,
-                    > tonic::server::StreamingService<super::IoStreamData>
-                    for IOStreamSvc<T> {
+                    impl<T: NezhaService> tonic::server::StreamingService<super::IoStreamData> for IOStreamSvc<T> {
                         type Response = super::IoStreamData;
                         type ResponseStream = T::IOStreamStream;
-                        type Future = BoxFuture<
-                            tonic::Response<Self::ResponseStream>,
-                            tonic::Status,
-                        >;
+                        type Future =
+                            BoxFuture<tonic::Response<Self::ResponseStream>, tonic::Status>;
                         fn call(
                             &mut self,
-                            request: tonic::Request<
-                                tonic::Streaming<super::IoStreamData>,
-                            >,
+                            request: tonic::Request<tonic::Streaming<super::IoStreamData>>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
@@ -658,21 +588,17 @@ pub mod nezha_service_server {
                     };
                     Box::pin(fut)
                 }
-                _ => {
-                    Box::pin(async move {
-                        Ok(
-                            http::Response::builder()
-                                .status(200)
-                                .header("grpc-status", tonic::Code::Unimplemented as i32)
-                                .header(
-                                    http::header::CONTENT_TYPE,
-                                    tonic::metadata::GRPC_CONTENT_TYPE,
-                                )
-                                .body(empty_body())
-                                .unwrap(),
+                _ => Box::pin(async move {
+                    Ok(http::Response::builder()
+                        .status(200)
+                        .header("grpc-status", tonic::Code::Unimplemented as i32)
+                        .header(
+                            http::header::CONTENT_TYPE,
+                            tonic::metadata::GRPC_CONTENT_TYPE,
                         )
-                    })
-                }
+                        .body(empty_body())
+                        .unwrap())
+                }),
             }
         }
     }

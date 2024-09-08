@@ -1,6 +1,6 @@
 use heim_virt::*;
+use log::{info, warn};
 use std::collections::HashMap;
-use log::{error, info, warn};
 use sysinfo::*;
 use systemstat::Platform;
 
@@ -89,18 +89,16 @@ pub async fn get_ip_info() -> String {
         Err(_) => return String::new(),
     };
     match client.get("http://ip.sb").send().await {
-        Ok(resp) => {
-            return match resp.text().await {
-                Ok(ip) => {
-                    info!("成功获取 IP 地址: {}", ip);
-                    ip
-                },
-                Err(e) => {
-                    warn!("未能获取 IP 地址, 将不会返回 IP 地址: {}", e);
-                    String::new()
-                }
+        Ok(resp) => match resp.text().await {
+            Ok(ip) => {
+                info!("成功获取 IP 地址: {}", ip);
+                ip
             }
-        }
+            Err(e) => {
+                warn!("未能获取 IP 地址, 将不会返回 IP 地址: {}", e);
+                String::new()
+            }
+        },
         Err(_) => String::new(),
     }
 }
@@ -110,7 +108,7 @@ pub async fn get_cpu_usage(cpus: &[Cpu]) -> f64 {
     for cpu in cpus {
         all_usage += cpu.cpu_usage() as f64;
     }
-    return all_usage / cpus.len() as f64;
+    all_usage / cpus.len() as f64
 }
 
 static mut TMP_RX: u64 = 0;

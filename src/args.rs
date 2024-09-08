@@ -1,6 +1,6 @@
 use clap::Parser;
 
-/// Nezha Agent
+/// Nezha Rust Agent
 #[derive(Parser, Debug, Clone)]
 #[command(version, about, long_about = None)]
 pub struct Args {
@@ -15,6 +15,10 @@ pub struct Args {
     /// Enable Debug Log
     #[arg(long, default_value_t = false)]
     pub debug: bool,
+
+    /// Enable Tls Connect
+    #[arg(long, default_value_t = false)]
+    pub tls: bool,
 }
 
 pub fn init_args() -> Args {

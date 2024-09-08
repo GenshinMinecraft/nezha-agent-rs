@@ -11,7 +11,6 @@ use server_comm::*;
 use simple_logger::init_with_level;
 use sysinfo::System;
 
-
 #[tokio::main]
 async fn main() {
     let args: Args = init_args();
@@ -22,14 +21,27 @@ async fn main() {
         init_with_level(Level::Info).unwrap();
     }
 
-    let mut client = match init_client(args.server.as_str()).await {
-        Ok(tmp) => {
-            info!("成功创立与服务器的连接");
-            tmp
+    let mut client = if args.tls {
+        match init_tls_client(args.server.as_str()).await {
+            Ok(tmp) => {
+                info!("成功创立与服务器的连接");
+                tmp
+            }
+            Err(e) => {
+                error!("无法连接服务器: {}", e);
+                exit(1);
+            }
         }
-        Err(e) => {
-            error!("无法连接服务器: {}", e);
-            exit(1);
+    } else {
+        match init_client(args.server.as_str()).await {
+            Ok(tmp) => {
+                info!("成功创立与服务器的连接");
+                tmp
+            }
+            Err(e) => {
+                error!("无法连接服务器: {}", e);
+                exit(1);
+            }
         }
     };
 

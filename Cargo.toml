@@ -1,22 +1,22 @@
 [package]
 name = "nezha-agent-rs"
-version = "0.0.1"
+version = "0.0.2"
 edition = "2021"
 
 [dependencies]
 log = "0.4.22"
 simple_logger = "5.0.0"
-tokio = { version = "1.39.2", features = ["full"] }
-tonic = "0.12.1"
-tokio-stream = "0.1.15"
-prost = "0.13.1"
-whoami = "1.5.1"
+tokio = { version = "1.40.0", features = ["full"] }
+tonic = { version = "0.12.2", features = ["tls", "tls-native-roots", "tls-webpki-roots"] }
+tokio-stream = "0.1.16"
+prost = "0.13.2"
+whoami = "1.5.2"
 sysinfo = "0.30.13"
 heim-virt = "0.1.0-beta.1"
 systemstat = "0.2.3"
-reqwest = { version = "0.12.5", features = ["rustls-tls"], default-features = false }
+reqwest = { version = "0.12.7", features = ["rustls-tls"], default-features = false }
 cpuinfo = "0.1.1"
-clap = { version = "4.5.8", features = ["derive"] }
+clap = { version = "4.5.17", features = ["derive"] }
 
 # [build-dependencies]
 # tonic-build = "0.12.1"

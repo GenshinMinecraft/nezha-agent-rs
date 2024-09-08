@@ -1,12 +1,15 @@
 use std::time::Duration;
 
-use log::error;
-use sysinfo::System;
-use tonic::{transport::{Channel, Endpoint}, Request};
-
 use crate::{
     get_info::*,
     proto::{nezha_service_client::NezhaServiceClient, Host, State},
+};
+use log::error;
+use sysinfo::System;
+use tonic::transport::ClientTlsConfig;
+use tonic::{
+    transport::{Channel, Endpoint},
+    Request,
 };
 
 pub async fn init_client(
@@ -31,7 +34,36 @@ pub async fn init_client(
     )
     .await?;
 
-    return Ok(client);
+    Ok(client)
+}
+
+pub async fn init_tls_client(
+    server_url: &str,
+) -> Result<NezhaServiceClient<Channel>, Box<dyn std::error::Error>> {
+    let endpoint = match Endpoint::from_shared("https://".to_string() + &server_url) {
+        Ok(tmp) => tmp,
+        Err(e) => {
+            error!("无法解析服务器地址: {}", e);
+            return Err(Box::new(tonic::Status::aborted("无法解析服务器地址")));
+        }
+    };
+
+    let tls = ClientTlsConfig::new()
+        .domain_name(server_url)
+        .with_enabled_roots();
+
+    let client = NezhaServiceClient::connect(
+        endpoint
+            .timeout(Duration::from_secs(5))
+            .connect_timeout(Duration::from_secs(5))
+            .tcp_keepalive(Some(Duration::from_secs(5)))
+            .http2_keep_alive_interval(Duration::from_secs(5))
+            .keep_alive_timeout(Duration::from_secs(5))
+            .keep_alive_while_idle(true)
+            .tls_config(tls)?,
+    )
+    .await?;
+    Ok(client)
 }
 
 pub async fn build_request_host(token: &str) -> Result<Request<Host>, Box<dyn std::error::Error>> {
@@ -84,11 +116,11 @@ pub async fn build_request_state(
         load1: uptime_one,
         load5: uptime_five,
         load15: uptime_fifteen,
-        tcp_conn_count: 0, // 没写
-        udp_conn_count: 0, // 没写
-        process_count: 0, // 没写
+        tcp_conn_count: 0,    // 没写
+        udp_conn_count: 0,    // 没写
+        process_count: 0,     // 没写
         temperatures: vec![], // 没写
-        gpu: 0.0, // 没写
+        gpu: 0.0,             // 没写
     });
     request
         .metadata_mut()
